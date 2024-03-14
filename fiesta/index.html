@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.::Fiesta 15 Años de Anapaula::.</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <h1>CONFIRMA TU ASISTENCIA</h1>
+    <form method="post" action="conexion.php">
+    <fieldset>
+        <input type="radio" id="asistencia" name="asistencia" value="si" checked>
+        <label for="asistencia" value="si">Asistiremos</label>
+        <input type="radio" id="asistencia" name="asistencia" value="no">
+        <label for="asistencia" value="no">No podremos asistir</label>
+    </fieldset>
+    <fieldset>
+        <label for="num_personas">¿Cuantas personas asistiran?</label>
+        <input type="number" placeholder="1-5" name="num_personas" min="1" max="5" required id="num_personas">
+    </fieldset>
+    <fieldset>
+        <label for="nom_personas">Escribe el nombre de la(s) persona(s) que asistira(n)</label>
+        <br>
+        <textarea name="nom_personas" id="nom_personas" cols="50" rows="10" required placeholder="Ejemplo: Jesus Alonso Soria Gonzalez
+Andrea Perez
+Aldo Ramos Martinez"></textarea>
+    </fieldset>
+    <fieldset>
+        <label for="dedicatoria">Dedica unas palabras a Anapaula</label>
+        <br>
+        <textarea name="dedicatoria" id="dedicatoria" cols="50" rows="10" required></textarea>
+    </fieldset>
+    <input type="submit" name="ok" value="Enviar asistencia">
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+
+    $("input[name='asistencia']").click(function(){
+        var campo1 = document.getElementById("num_personas");
+        var campo2 = document.getElementById("nom_personas");
+        if(this.value == "si"){
+            campo1.disabled = false;
+            campo2.disabled = false;
+        }
+        else{
+            campo1.disabled = true;
+            campo2.disabled = true;
+        }
+    });
+    </script>
+</body>
+</html>

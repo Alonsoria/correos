@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Envío de Correo</title>
+    <link rel="stylesheet" href="diseño.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario de Envío de Correo</h1>
+        <form action="enviar_correo.php" method="post" enctype="multipart/form-data">
+            <label for="remitente">Remitente:</label>
+            <input type="email" id="remitente" name="remitente" required>
+
+            <label for="destinatario">Destinatario:</label>
+            <input type="email" id="destinatario" name="destinatario" required>
+
+            <label for="asunto">Asunto:</label>
+            <input type="text" id="asunto" name="asunto" required>
+
+            <label for="cuerpo">Cuerpo del mensaje:</label><br>
+            <textarea id="cuerpo" name="cuerpo" rows="5" required></textarea>
+
+            <label for="adjunto">Adjuntar Archivo:</label>
+            <input type="file" id="adjunto" name="adjunto">
+
+            <input type="submit" value="Enviar Correo">
+        </form>
+    </div>
+</body>
